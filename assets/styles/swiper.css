@@ -1,0 +1,27 @@
+  /* Forzar la altura que quieras para el carousel (responsive) */
+  :root {
+    --hero-height: 70vh;
+  }
+
+  /* Aseguramos que el contenedor principal tenga la altura deseada */
+  .hero-swiper {
+    height: var(--hero-height) !important;
+    min-height: 300px; /* evita que colapse en pantallas muy pequeñas */
+  }
+
+  /* Forzar que swiper y sus slides respeten la altura del contenedor */
+  .hero-swiper .swiper,
+  .hero-swiper .swiper-wrapper,
+  .hero-swiper .swiper-slide {
+    height: 100% !important;
+  }
+
+  /* Forzar que la imagen ocupe el 100% del slide (y mantener object-fit) */
+  .hero-swiper .swiper-slide img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block;
+  }
+

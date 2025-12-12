@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/styles/swiper.css">
+    <title>Document</title>
+</head>
+<body>
+   <header class="bg-neutral-800 text-white sticky top-0 z-50">
+        <nav class=" max-w-6xl mx-auto px-2 py-4 flex gap-8 items-center justify-center relative">
+            <ul class="hidden md:flex  justify-start gap-6 font-[lora] font-bold text-[11px] uppercase tracking-[2px]">
+                <li>
+                    <a href="">Inicio</a> 
+                </li>
+                <li>
+                    <a href="">Sobre Nosotros</a>
+                </li>    
+                <li>
+                    <a href="">Contacto</a> 
+                </li>
+            </ul>
+            <img class="w-16" src="public/img/logo.png" alt="Logo">
+            <ul class="hidden md:flex justify-end gap-6 font-[lora] font-bold text-[11px] uppercase tracking-[2px]">
+                <li>
+                    <a href="">Portfolio</a>
+                </li>
+                <li>
+                    <a href="">Galeria</a>
+                </li>
+                <li>
+                    <a href="">Tarifas</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero-swiper relative h-[70vh] overflow-hidden">
+        <div class="swiper w-full h-full">
+            <div class="swiper-wrapper" id="swiper-wrapper">
+                <!-- Slides will be injected here by JavaScript -->
+            </div>    
+
+            <!-- Controles -->
+            
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+        <!-- Texto -->
+        <!-- <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4 bg-black/30 backdrop-blur-sm">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Barrilete Cósmico</h1>
+        </div> -->
+
+
+
+    </section>
+    <!-- Portfolio section -->
+    <section class="portfolio--section flex flex-col justify-center items-center mt-30 p-10">
+        <h2 class="font-[lora] font-semibold text-2xl uppercase tracking-[2px] not-italic text-center mb-12">Portfolio</h2>
+        <div class="box--portfolio flex justify-center w-full items-center gap-4 mt-10 cursor-pointer">
+            <div class="eventos--box relative w-full h-96 rounded-lg shadow-lg overflow-hidden group">
+                <div class="absolute inset-0 bg-[url('/public/img/portfolio1.jpg')] bg-cover bg-center transition-all duration-500 ease-in-out group-hover:blur-sm"></div>
+                <div class="relative z-10 w-full h-full flex items-center justify-center">
+                    <h2 class="font-[lora] text-white text-6xl font-bold transition-all duration-500 ease-in-out group-hover:text-7xl group-hover:scale-110">Eventos</h2>
+                </div>
+            </div>
+            <div class="sesion--box relative w-full h-96 rounded-lg shadow-lg overflow-hidden group">
+                <div class="absolute inset-0 bg-[url('/public/img/portfolio2.jpg')] bg-cover bg-center transition-all duration-500 ease-in-out group-hover:blur-sm"></div>
+                <div class="relative z-10 w-full h-full flex items-center justify-center">
+                    <h2 class="font-[lora] text-white text-6xl font-bold transition-all duration-500 ease-in-out group-hover:text-7xl group-hover:scale-110">Sesiones</h2>
+                    
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <!-- Video section -->
+
+    <section class="flex items-center mr-7 ml-7 justify-center gap-8 p-8 w-full h-screen min-h-screen">
+        <div class="shrink-0 relative">
+            <div class="relative w-115 h-148">
+                <video class="absolute top-0 left-0 w-full h-full object-cover rounded-lg shadow-lg" src="public/video/sample-video.mp4" controls></video>
+            </div>
+            <div class="absolute top-5 right-[-300px] w-80 h-48">
+                <video  class="w-full h-full rounded-lg shadow-lg" src="public/video/sample-video.mp4" controls></video>
+            </div>
+        </div>
+        <div class="flex-1 max-w-lg flex flex-col items-start justify-end gap-4 mt-50">
+            <h2 class="font-[lora] font-semibold text-2xl uppercase tracking-[2px] not-italic">Video</h2>
+            <p class="w-[70%]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate voluptates sunt! Autem, harum necessitatibus. Itaque quod veritatis eius officiis nam optio laboriosam necessitatibus fugit fuga earum aliquid in harum a, qui aspernatur. Deleniti minima amet reprehenderit sed nesciunt recusandae non atque. Sapiente, distinctio cupiditate iusto libero amet ipsa dolorem.</p>
+            <button href="*" class="button-video p-2 px-4 bg-transparent border-black border-solid border hover:bg-black hover:text-white transition-colors duration-300">Ver mas</button>
+        </div>
+    </section>
+     
+     <!-- About section -->
+
+    <section class="about--section flex flex-col items-center justify-center gap-8 p-20">
+        <h2 class="font-[lora] font-semibold text-2xl uppercase tracking-[2px] not-italic text-center mb-12">Sobre mi</h2>
+        <div class="flex items-center w-full md:w-1/2 justify-center  gap-8">
+            <div class="lex flex-col justify-center items-center space-y-4  text-gray-700 max-w-md text-left gap-3">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro incidunt qui rerum, eos perspiciatis placeat nisi, libero autem nam quaerat totam possimus. Ipsam, optio dolores molestiae est quae porro eaque inventore, earum ab tenetur doloremque et placeat dignissimos aliquam reprehenderit facere iure reiciendis. Exercitationem a, deserunt recusandae doloribus eaque reprehenderit!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro incidunt qui rerum, eos perspiciatis placeat nisi, libero autem nam quaerat totam possimus. Ipsam, optio dolores molestiae est quae porro eaque inventore, earum ab tenetur doloremque et placeat dignissimos aliquam reprehenderit facere iure reiciendis. Exercitationem a, deserunt recusandae doloribus eaque reprehenderit!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro incidunt qui rerum, eos perspiciatis placeat nisi, libero autem nam quaerat totam possimus. Ipsam, optio dolores molestiae est quae porro eaque inventore, earum ab tenetur doloremque et placeat dignissimos aliquam reprehenderit facere iure reiciendis. Exercitationem a, deserunt recusandae doloribus eaque reprehenderit!</p>
+            </div>
+            <div class="w-full md:w-1/3 flex">
+                <img class="max-w-full h-120 object-cover" src="/public/img/hero.jpg" alt="">
+            </div>
+        </div>
+    </section> 
+
+    <!-- Tarifas section -->
+    <section class="tarifas--section flex flex-col items-center justify-center gap-8 p-20">
+        <h2 class="font-[lora] font-semibold text-2xl uppercase tracking-[2px] not-italic text-center mb-12">Tarifas</h2>
+        <div class="flex items-center justify-center gap-8">
+            <div class="border p-6 w-72">
+                <h3 class="font-[lora] font-semibold text-xl uppercase tracking-[2px] not-italic text-center mb-4">Básico</h3>
+                <p class="text-gray-700 font-semibold text-center mb-6">$70.000</p>
+                <div class="flex items-center justify-center">
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>✅ 1 Hora de sesión</li>
+                        <li>✅ 10 Fotos editadas</li>
+                        <li>✅ Galería online</li>
+                        <li>❌ Fotos impresas</li>
+                        <li>❌ Video</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border p-6 w-72">
+                <h3 class="font-[lora] font-semibold text-xl uppercase tracking-[2px] not-italic text-center mb-4">Avanzado</h3>
+                <p class="text-gray-700 font-semibold text-center mb-6">$100.000</p>
+                <div class="flex items-center justify-center">
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>✅ 1 Hora de sesión</li>
+                        <li>✅ 15 Fotos editadas</li>
+                        <li>✅ Galería online</li>
+                        <li>✅ Fotos impresas</li>
+                        <li>✅ Video</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border p-6 w-72">
+                <h3 class="font-[lora] font-semibold text-xl uppercase tracking-[2px] not-italic text-center mb-4">Premium</h3>
+                <p class="text-gray-700 font-semibold text-center mb-6">$150.000</p>
+                <div class="flex items-center justify-center">
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>✅ 1 Hora de sesión</li>
+                        <li>✅ 20 Fotos editadas</li>
+                        <li>✅ Galería online</li>
+                        <li>✅ Fotos impresas</li>
+                        <li>✅ Video</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form section -->
+     <section class="bg-[url('/public/img/form.jpg')] bg-center bg-cover h-dvh">
+        <div class="flex items-center justify-center h-full">
+            <form class="bg-white opacity-70 p-8 shadow-lg w-96 mx-auto mt-12 flex flex-col items-center gap-4" action="">
+                <div class="flex flex-col items-start">
+                    <label  for="name">Nombre</label>
+                    <input class="h-8 w-64 border border-solid-1px px-4" type="text" id="name" name="name">
+                </div>
+                <div class="flex flex-col items-start">
+                    <label for="email">Email</label>
+                    <input class="h-8 w-64 border border-solid-1px px-4" type="email" id="email" name="email">
+                </div>
+                <div class="flex flex-col items-start">
+                    <label for="message">Mensaje</label>
+                    <textarea class="h-24 w-64 border border-solid-1px px-4 resize-none" id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="h-10 w-64 mt-6 border border-solid-1px text-white bg-black  hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer">Enviar</button>
+            </form>
+        </div>
+     </section>
+
+     <!-- Contact section  -->
+    <section class='flex flex-col items-center justify-center h-136 mt-6 mb-6'>
+        <h2 class='font-[lora] font-semibold text-2xl uppercase tracking-[2px] not-italic text-center mb-12'>Contacto</h2>
+        <div class='flex items-center justify-center gap-8'>
+            <div >
+                <img class='w-full h-96' src="public/img/contact.jpg" alt="" />
+            </div>
+            <div class='flex flex-col items-start justify-center mt-6 w-full md:w-1/3 space-y-4'>
+                <h3 class='font-[lora] font-semibold text-2xl'>Ponte en contacto</h3>
+                <p class='text-gray-700 max-w-md'>Puedes contactarnos en cualquier momento.</p>
+                <div class='space-y-2'>
+                  <div class='flex items-center gap-2'>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+                    <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
+                    </svg>
+
+                    <p> 388-468-8061</p>
+                  </div>
+                  <div class='flex items-center gap-2'>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+                    <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+                    </svg>
+
+                    <p> Lascano colodrero 2936</p>
+                  </div>
+                  <div class='flex items-center gap-2'>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+                    <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                    <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                    </svg>
+
+                    <p> fernandaparedes@barriletecosmico.com</p>
+                  </div>
+                </div>
+                <Button class="p-2 px-4 bg-transparent border-black border-solid border hover:bg-black hover:text-white transition-colors duration-300" href='/contact'>Contactar</Button>
+            </div>
+        </div>
+    </section>  
+
+
+    <!-- footer -->
+    <footer class="bg-neutral-800  text-white p-4 text-center">
+        <p class="text-sm">&copy; 2024 Barrilete Cósmico. Todos los derechos reservados.</p>
+        <ul class="flex justify-center items-center gap-8 text-xs mt-2 ">
+            <li>
+                <a class="text-blue-400 hover:underline" href="">Facebook</a>
+            </li>
+            <li>
+                <a class="text-blue-400 hover:underline" href="">Instagram</a>
+            </li>
+            <li>
+                <a class="text-blue-400 hover:underline" href="">Tik Tok</a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- Scripts -->
+     
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>
