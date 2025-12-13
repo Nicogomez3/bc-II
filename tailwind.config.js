@@ -9,7 +9,11 @@ module.exports = {
     "bg-[url('/public/img/portfolio2.jpg')]",
   ],
   theme: {
-    extend: {},
+    extend: {
+        fontFamily: {
+        lora: ['Lora', 'serif'],
+    },
+    },
   },
   plugins: [],
 };
