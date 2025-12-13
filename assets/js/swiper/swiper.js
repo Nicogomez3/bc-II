@@ -2,7 +2,7 @@ export const initSwiper = () => {
     console.log(swiper, "Swiper initialized");
 
     //array de imagenes
-    const images = ["./public/img/hero.jpg", "./public/img/hero2.jpg", "./public/img/hero3.jpg", "./public/img/hero4.jpg", "./public/img/hero5.jpg", "./public/img/hero6.jpg"];
+    const images = ["./public/img/hero.jpg", "./public/img/hero2.jpg", "./public/img/hero3.jpg", "./public/img/hero4.jpg", "./public/img/hero5.jpg", "./public/img/sesiones.jpg"];
 
     const wrapper = document.getElementById("swiper-wrapper");
 
