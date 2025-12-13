@@ -537,6 +537,9 @@
   .bg-\[url\(\'\/public\/img\/portfolio2\.jpg\'\)\] {
     background-image: url('/public/img/portfolio2.jpg');
   }
+  .bg-\[url\(\'\/public\/img\/sesiones\.jpg\'\)\] {
+    background-image: url('/public/img/sesiones.jpg');
+  }
   .bg-cover {
     background-size: cover;
   }
