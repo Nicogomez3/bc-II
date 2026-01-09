@@ -1,5 +1,15 @@
 import { initSwiper } from "../js/swiper/swiper.js";
 
+import { loadPage } from "./router.js"
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadPage("./pages/home.html", false)
+})
+
+
+// 🔥 CARGA INICIAL
+loadPage("./pages/home.html", false)
+
 document.addEventListener('DOMContentLoaded', () => {
   initSwiper();
 });
@@ -92,6 +102,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
       isOpen = false;
     }
+  });
+});
+
+// Dropdown control for Portfolio (hover + keyboard accessible)
+document.addEventListener('DOMContentLoaded', () => {
+  const portfolioMenu = document.getElementById('portfolio-menu');
+  const portfolioDropdown = document.getElementById('portfolio-dropdown');
+  const portfolioToggle = document.getElementById('portfolio-toggle');
+
+  if (!portfolioMenu || !portfolioDropdown) return;
+
+  const openDropdown = () => {
+    portfolioDropdown.style.opacity = '1';
+    portfolioDropdown.style.maxHeight = portfolioDropdown.scrollHeight + 'px';
+    portfolioDropdown.style.pointerEvents = 'auto';
+    portfolioToggle?.setAttribute('aria-expanded', 'true');
+  };
+
+  const closeDropdown = () => {
+    portfolioDropdown.style.opacity = '0';
+    portfolioDropdown.style.maxHeight = '0';
+    portfolioDropdown.style.pointerEvents = 'none';
+    portfolioToggle?.setAttribute('aria-expanded', 'false');
+  };
+
+  // Initialize
+  portfolioDropdown.style.maxHeight = '0';
+  portfolioDropdown.style.opacity = '0';
+  portfolioDropdown.style.pointerEvents = 'none';
+
+  // Mouse interactions with small close delay to allow transit between toggle and dropdown
+  let closeTimer = null;
+  const scheduleClose = (delay = 200) => {
+    if (closeTimer) clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => {
+      closeDropdown();
+      closeTimer = null;
+    }, delay);
+  };
+  const cancelClose = () => {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+  };
+
+  portfolioMenu.addEventListener('mouseenter', () => {
+    cancelClose();
+    openDropdown();
+  });
+  portfolioMenu.addEventListener('mouseleave', () => scheduleClose(200));
+  portfolioDropdown.addEventListener('mouseenter', cancelClose);
+  portfolioDropdown.addEventListener('mouseleave', () => scheduleClose(200));
+
+  // Keyboard / focus accessibility
+  portfolioMenu.addEventListener('focusin', (e) => {
+    cancelClose();
+    openDropdown();
+  });
+  portfolioMenu.addEventListener('focusout', (e) => {
+    // If focus moves outside both the toggle/menu and the dropdown, close (no delay)
+    const related = e.relatedTarget;
+    if (!portfolioMenu.contains(related) && !portfolioDropdown.contains(related)) scheduleClose(0);
+  });
+
+  // Prevent anchor navigation (anchor used only as control)
+  portfolioToggle?.addEventListener('click', (e) => {
+    e.preventDefault();
+  });
+
+  // Close with Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDropdown();
   });
 });
 

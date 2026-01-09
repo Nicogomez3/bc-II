@@ -1,35 +1,55 @@
-export const initSwiper = () => {
-    console.log(swiper, "Swiper initialized");
+let swiperInstance = null
 
-    //array de imagenes
-    const images = ["./public/img/hero.jpg", "./public/img/hero2.jpg", "./public/img/hero3.jpg", "./public/img/hero4.jpg", "./public/img/hero5.jpg", "./public/img/sesiones.jpg"];
+export function initSwiper() {
+  const wrapper = document.getElementById("swiper-wrapper")
+  const swiperEl = document.querySelector(".swiper")
 
-    const wrapper = document.getElementById("swiper-wrapper");
+  // 🔒 blindaje total
+  if (!swiperEl || !wrapper) return
 
-    images.forEach((src) => {
-        const slide = document.createElement("div");
-        slide.className = "swiper-slide h-[70vh] relative";
-        slide.innerHTML = `
-            <img src="${src}" alt="foto" class="w-full h-full object-cover"/>
-        `
-        wrapper.appendChild(slide);
-    })
-}
+  // evitar duplicados
+  if (swiperInstance) {
+    swiperInstance.destroy(true, true)
+    swiperInstance = null
+  }
 
-const swiper = new Swiper(".swiper", {
+  // slides
+  const images = [
+    "./public/img/hero.jpg",
+    "./public/img/hero2.jpg",
+    "./public/img/hero3.jpg",
+    "./public/img/hero4.jpg",
+    "./public/img/hero5.jpg",
+    "./public/img/sesiones.jpg"
+  ]
+
+  wrapper.innerHTML = ""
+
+  images.forEach(src => {
+    const slide = document.createElement("div")
+    slide.className = "swiper-slide h-[70vh]"
+    slide.innerHTML = `
+      <img src="${src}" class="w-full h-full object-cover" />
+    `
+    wrapper.appendChild(slide)
+  })
+
+  // 🔥 crear swiper DESPUÉS del DOM
+  swiperInstance = new Swiper(".swiper", {
     loop: true,
     effect: "fade",
     speed: 800,
     autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
+      delay: 4000,
+      disableOnInteraction: false
     },
     pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+      el: ".swiper-pagination",
+      clickable: true
     },
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  })
+}
