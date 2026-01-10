@@ -1,19 +1,14 @@
 let swiperInstance = null
 
-export function initSwiper() {
-  const wrapper = document.getElementById("swiper-wrapper")
+export const initSwiper = () => {
   const swiperEl = document.querySelector(".swiper")
+  const wrapper = document.getElementById("swiper-wrapper")
 
-  // 🔒 blindaje total
-  if (!swiperEl || !wrapper) return
-
-  // evitar duplicados
-  if (swiperInstance) {
-    swiperInstance.destroy(true, true)
-    swiperInstance = null
+  if (!swiperEl || !wrapper) {
+    console.warn("Swiper no encontrado, se cancela initSwiper")
+    return
   }
 
-  // slides
   const images = [
     "./public/img/hero.jpg",
     "./public/img/hero2.jpg",
@@ -28,17 +23,13 @@ export function initSwiper() {
   images.forEach(src => {
     const slide = document.createElement("div")
     slide.className = "swiper-slide h-[70vh]"
-    slide.innerHTML = `
-      <img src="${src}" class="w-full h-full object-cover" />
-    `
+    slide.innerHTML = `<img src="${src}" class="w-full h-full object-cover">`
     wrapper.appendChild(slide)
   })
 
-  // 🔥 crear swiper DESPUÉS del DOM
-  swiperInstance = new Swiper(".swiper", {
+  new Swiper(".swiper", {
     loop: true,
     effect: "fade",
-    speed: 800,
     autoplay: {
       delay: 4000,
       disableOnInteraction: false
@@ -46,10 +37,6 @@ export function initSwiper() {
     pagination: {
       el: ".swiper-pagination",
       clickable: true
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
     }
   })
 }

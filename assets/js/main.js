@@ -2,13 +2,10 @@ import { initSwiper } from "../js/swiper/swiper.js";
 
 import { loadPage } from "./router.js"
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadPage("./pages/home.html", false)
-})
-
 
 // 🔥 CARGA INICIAL
 loadPage("./pages/home.html", false)
+console.log("DOM loaded")
 
 document.addEventListener('DOMContentLoaded', () => {
   initSwiper();
@@ -178,4 +175,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener("click", e => {
+  const toggle = e.target.closest("#mobile-portfolio-toggle")
+  if (!toggle) return
+
+  const dropdown = document.getElementById("mobile-portfolio-dropdown")
+  const icon = document.getElementById("mobile-portfolio-icon")
+
+  dropdown.classList.toggle("hidden")
+  icon.textContent = dropdown.classList.contains("hidden") ? "+" : "−"
+})
 
